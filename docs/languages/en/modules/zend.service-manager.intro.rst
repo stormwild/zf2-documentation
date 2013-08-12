@@ -55,7 +55,7 @@ In addition to the above described methods, the ``ServiceManager`` provides addi
 
      class MyFactory implements FactoryInterface
      {
-         public function createService()
+         public function createService(ServiceLocatorInterface $serviceLocator)
          {
              return new \stdClass();
          }
@@ -121,7 +121,7 @@ In addition to the above described methods, the ``ServiceManager`` provides addi
 
      var_dump($serviceManager->get('foo')->name); // foo
      var_dump($serviceManager->get('bar')->name); // bar
-     var_dump($serviceManager->get('bar')->name); // exception! Zend\ServiceManager\Exception\ServiceNotFoundException
+     var_dump($serviceManager->get('baz')->name); // exception! Zend\ServiceManager\Exception\ServiceNotFoundException
 
 - **Initializers**. You may want certain injection points to be always called. As an example,
   any object you load via the service manager that implements

@@ -160,7 +160,7 @@ We'll modify the ``config/application.config.php`` file to read as follows:
         'Application',
     );
     if ($env == 'development') {
-        $modules[] = 'ZendDeveloperTools',
+        $modules[] = 'ZendDeveloperTools';
     }
 
     return array(
@@ -189,7 +189,7 @@ We'll modify the ``config/application.config.php`` file to read as follows:
             'cache_dir' => 'data/config/',
     
             // Use the $env value to determine the state of the flag
-            'check_dependencies' => ($env != 'production),
+            'check_dependencies' => ($env != 'production'),
         ),
     );
 
@@ -258,7 +258,7 @@ If ``$env`` evaluates to ``testing``, then the following files will be merged,
 in the following order::
 
     global.php
-    users.test.php
+    users.testing.php
     local.php
     users.local.php
 
